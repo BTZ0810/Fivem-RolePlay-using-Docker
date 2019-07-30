@@ -20,12 +20,12 @@ end)
 AddEventHandler('playerConnecting', function(name, setReason)
   local cv = GetConvarInt('sv_maxclients', 32)
 
-  print('Connecting: ' .. name .. '^7')
+  print('Connecting: ' .. name)
 
   if playerCount >= cv then
-    print('Full. :(')
+    print('Servidor Lotado. :(')
 
-    setReason('This server is full (past ' .. tostring(cv) .. ' players).')
+    setReason('O Servidor esta cheio (past ' .. tostring(cv) .. ' players).')
     CancelEvent()
   end
 end)

@@ -1,0 +1,6 @@
+Fri Oct 27 03:45:20 2017 => 1 fined 31 the amount of 1000 for Roubo
+Fri Oct 27 04:48:45 2017 => 1 fined 31 the amount of 1000 for Alta Velocidae
+Fri Oct 27 21:13:27 2017 => 1 fined 34 the amount of 100 for Roubo
+Wed Sep 12 22:55:32 2018 => 9 multado 7 no preço de 70000 por Armamento policial sem farda (1advertencia)
+Thu Sep 13 00:57:05 2018 => 2 multado 23 no preço de 2000 por Sem Capacete,e direção perigosa!
+Thu Sep 13 01:07:16 2018 => 9 multado 22 no preço de 300 por Mascarado

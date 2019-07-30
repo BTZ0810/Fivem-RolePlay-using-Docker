@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.html">
+  <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#3003a1">
+  <meta name="apple-mobile-web-app-title" content="DataNerds">
+  <meta name="application-name" content="DataNerds">
+  <meta name="msapplication-TileColor" content="#3003a1">
+  <meta name="theme-color" content="#3003a1">
+
+    <meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token" content="VaKLoAP2yfT2hcJeiDYOl5wPJlDzmvLd1XNQBkKywwA958b5NcGxwrSxtWz8cFjO-jZRKKDWhITsCg9JM9GGMw==">
+            <title>Morro Do Alemao</title>
+        <link href="css/main.min.css" rel="stylesheet">
+<script src="assets/8fd5e607/jquery.min.js"></script></head>
+<body class="title-bg background">
+<div class="fixBlock"></div>
+<div id="app">
+    <!--animation circles-->
+    <div :class="{'_load': page_load, '_load_end': page_load_end}" class="js-circle circle circle-small">
+        <img class="circle-small-animation" src="img/small_circle_color.png" alt="">
+    </div>
+    <div :class="{'_load': page_load, '_load_end': page_load_end}" class="js-circle circle circle-middle">
+        <img class="circle-middle-animation" src="img/middle_circle_color.png" alt="">
+    </div>
+
+    <!--animation line-->
+    <div class="animationLine" :class="{'open': pageLeave}">
+        <svg class="js-line" width="5182" height="41" viewBox="0 0 5182 41" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+            <path :stroke-dashoffset="dashOffset"
+                  d="M0 0C38.7577 12.2642 112.58 24.185 286.5 28.6607C536.259 28.6607 810.105 13.5335 1024.5 13.5335C1238.89 13.5335 1391.75 31.6362 1695 31.6362C1780.98 31.6362 1951.5 19.6362 2055 18.6362C2158.5 17.6362 2296 33.7634 2436 33.7634C2576 33.7634 2959.61 18.6362 3174 18.6362C3388.39 18.6362 3541.25 36.739 3844.5 36.739C4094.26 36.739 4368.11 21.6118 4582.5 21.6118C4778.98 21.6118 4923.77 36.8153 5180 39.3564"
+                  transform="translate(1 1)" stroke="#fbfbfb"/>
+        </svg>
+        <div class="animationBlock" :class="{'open': pageLeave}"></div>
+    </div>
+    <div class="title--wrap">
+        <!--animation particles-->
+        <img class="light light-1" :class="{'_load_end': page_load_end}" src="img/light2.png" alt="">
+        <img class="light light-2" :class="{'_load_end': page_load_end}" src="img/light2.png" alt="">
+        <img class="light light-3" :class="{'_load_end': page_load_end}" src="img/light2.png" alt="">
+        <!--animation end-->
+        
+<header class="header header-title" :class="{'preloader': !page_load_end}">
+    <a href="index.html" class="header--logo">
+	<audio id="colonelmsc" controls autoplay>
+	<source src="music/colonelv6.mp3">
+</audio>
+<script>
+document.getElementById("colonelmsc").volume = 0.2;
+</script> 
+        
+    </a>
+
+
+    <!--burger-->
+    <div class="burger-menu" :class="{'active': menuOpen}" @click="menuState">
+        <div class="burger"></div>
+    </div>
+</header>
+
+<!--language-->
+<!--language-->
+
+<!--nav mobile-->
+<nav class="nav-mobile" :class="{'active': menuOpen}">
+    <div class="nav-mobile-links">
+        <a href="en/services.html">Services</a>
+        <a href="en/industries.html">Industries</a>
+                <a href="en/about-us.html">About us</a>
+        <a href="en/contacts.html">Contacts</a>
+    </div>
+    <div class="nav-mobile-contacts">
+        <p class="footer-mobile-email">admin@zerohp.ro</p>
+        <!--language-->
+<select class="lang js-languageChange">
+      <option selected value="/en/site/index">RO</option>
+  </select>
+    </div>
+</nav>        <transition-group name="fade" tag="div" class="wrapper">
+    <transition-group tag="div" name="list-complete" class="showCase-1" v-if="activeSlide ==1 || mobile" :key="1">
+        <!--1 item-->
+	
+        <h1 class="title--heading vue-animation-first list-complete-item" :class="{'_load': page_load}" :key="'list_1'">
+           Morro Do Juramento RolePlay</h1>
+        <template v-if="page_load_end">
+            <h3 class="vue-animation-second list-complete-item"
+                :key="'list_2'"><b>Não leia as estrelas, leia os dados</b></h3>
+				
+            <span class="vue-animation-third description list-complete-item" :key="'list_3'">
+                       <b>Nós automatizamos os processos de negócios usando análise avançada, aprendizado de máquina e desenvolvimento de software exclusivo</b>                   </span>
+            <a class="more vue-animation-fourth list-complete-item"  :key="'list_4'">
+                ❄️ Role para ver os Empregos! ❄️               <svg class="arrow" width="58" height="9" viewBox="0 0 58 9" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 7.125H57.75L42.75 0" transform="translate(0 1)" stroke="white"/>
+                </svg>
+                <span class="outline-button__lines">
+                            <span class="outline-button__line outline-button__line--horizontal outline-button__line--top"></span>
+                            <span class="outline-button__line outline-button__line--vertical outline-button__line--right"></span>
+                            <span class="outline-button__line outline-button__line--horizontal outline-button__line--bottom"></span>
+                            <span class="outline-button__line outline-button__line--vertical outline-button__line--left"></span>
+                        </span>
+            </a>
+        </template>
+    </transition-group>
+    <div class="showCase-2" v-if="activeSlide ==2 || mobile" :key="2">
+        <h2 class="vue-animation-first">🤑 Coisas Inovadoras !🤑</h2>
+                    <div class="vue-animation-second title--services">
+                                    <div class="tilter">
+                        <div class="title--services--item tilter__figure">
+                            <div class="title--services--item--pic">
+                                                                    <img src="uploads/origin/service/2/2_learning.png" alt="">
+                                                            </div>
+                            <span class="bold">🥇Traficante🥇</span>
+                            <p>💪 -> Traficante O emprego Do Mes no server!.💪 </p>
+							
+      <p>💪 -> No servidor todo mes tem seu emprego, E nesse o Traficante se destacou 💪 </p>
+	  
+<p>💪-> Traficante consiste em um emprego ilegal, Cuidado com os "zomi" ! 💪 </p>
+                        </div>
+                    </div>
+                                    <div class="tilter">
+                        <div class="title--services--item tilter__figure">
+                            <div class="title--services--item--pic">
+                                                                    <img src="uploads/origin/service/2/2_learning.png" alt="">
+                                                            </div>
+                            <span class="bold">💰Gangues💰</span>
+                           
+							<p>-> 💲Temos somente uma Gang No Momento a LA MAFIA (lunar).💲</p>
+<p>-> 💲 Se voce quiser abrir uma gang no servidor eh so vim aqui no discord💲</p> 
+<p> -> 💲Daremos 500k para sua gang se estabelecer na cidade!💲 </p>
+</p>
+                        </div>
+                    </div>
+                                    <div class="tilter">
+                        <div class="title--services--item tilter__figure">
+                            <div class="title--services--item--pic">
+                                                                    <img src="uploads/origin/service/2/2_learning.png" alt="">
+                                                            </div>
+                            <span class="bold">💸COIN💸</span>
+                            <p> 💰O servidor se basea em REAL, Economia Muito Legal!💰</p>
+                        </div>
+                    </div>
+                            </div>
+                <a class="more vue-animation-third" href="" @click.prevent="">
+            Mais Detalhes sobre o Servidor            <svg class="arrow" width="58" height="9" viewBox="0 0 58 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 7.125H57.75L42.75 0" transform="translate(0 1)" stroke="white"/>
+            </svg>
+            <span class="outline-button__lines">
+                        <span class="outline-button__line outline-button__line--horizontal outline-button__line--top"></span>
+                        <span class="outline-button__line outline-button__line--vertical outline-button__line--right"></span>
+                        <span class="outline-button__line outline-button__line--horizontal outline-button__line--bottom"></span>
+                        <span class="outline-button__line outline-button__line--vertical outline-button__line--left"></span>
+                  </span>
+        </a>
+
+    </div>
+    <div class="showCase-3" v-if="activeSlide ==3 || mobile" :key="3">
+        <h2 class="vue-animation-first">👑Fundador👑</h2>
+                    <div class="title--results vue-animation-second">
+                                    <div class="tilter">
+                        <div class="title--results--item tilter__figure">
+                            <span class="number"><font size="50">👑Raphael👑</font></span>
+                            <span class="bold"></span>
+                            <p><font size="5">⚙️Developer⚙️</font></p>
+							<p><font size="5">👑Servidor: Raphael, Discord: Gabriel👑</font></p>
+                        </div>
+                    </div>
+
+                                    <div class="tilter">
+                        <div class="title--results--item tilter__figure">
+                             <span class="number"><font size="50"></font></span>
+                            <span class="number"><font size="50">👑Gabriel👑</font></span>
+                            <span class="bold"></span>
+                            <p>🕴🏼Suporters🕴🏼</p>
+							<p><font size="5">👑LDS, Farofa, PretoVermelho👑</font></p>
+                        </div>
+                    </div>
+                            </div>
+              
+    
+    </div>
+    <div class="showCase-4" v-if="activeSlide ==4 || mobile" :key="4">
+        <h2 class="vue-animation-first mobile-style">👑👑👑Discord do Servidor, Logo Abaixo👑👑👑</h2>
+        <span class="mission description vue-animation-second">
+		<center><img src="uploads/logo.png" height="250" width="250" > </center>
+              👑👑👑👑 ->>>> https://discord.gg/QRuD2V9 <<<<- 👑👑👑👑          </span>
+        <a class="more vue-animation-third" >
+          ❄️ Role Para Baixo  ❄️          <svg class="arrow" width="58" height="9" viewBox="0 0 58 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 7.125H57.75L42.75 0" transform="translate(0 1)" stroke="white"/>
+            </svg>
+            <span class="outline-button__lines">
+                        <span class="outline-button__line outline-button__line--horizontal outline-button__line--top"></span>
+                        <span class="outline-button__line outline-button__line--vertical outline-button__line--right"></span>
+                        <span class="outline-button__line outline-button__line--horizontal outline-button__line--bottom"></span>
+                        <span class="outline-button__line outline-button__line--vertical outline-button__line--left"></span>
+                  </span>
+        </a>
+        <footer class="footer-title vue-animation-fourth">
+            <div class="footer-left">
+                <p>Raphael © 2018</p>
+            </div>
+
+            <div class="footer-right">
+                <p>Morro Do Juramento</p>
+                <a href="" target="_blank" class="footer-mobile-t">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M0.585938 0.58572C0 1.17166 0 2.11437 0 4V12C0 13.8856 0 14.8283 0.585938 15.4143C1.17144 16 2.11458 16 4 16H12C13.8854 16 14.8286 16 15.4141 15.4143C16 14.8283 16 13.8856 16 12V4C16 2.11437 16 1.17166 15.4141 0.58572C14.8286 0 13.8854 0 12 0H4C2.11458 0 1.17144 0 0.585938 0.58572ZM9.08898 5.05143H10.7457V6.8635H9.08898V9.82031L9.08941 9.83051C9.1072 10.6228 9.1237 11.3303 9.98872 11.3303H10.8411L10.8889 13.1424C10.8889 13.1424 10.2795 13.4444 9.38889 13.4444C7.18316 13.4444 6.38889 12.6693 6.38889 10.4243V6.8635H4.88889V5.05143H6.38889V2.66667H9.08898V5.05143Z"
+                              fill="white"/>
+                    </svg>
+                </a>
+            </div>
+        </footer>
+    </div>
+</transition-group>
+<!--pagination-->
+<div :class="{'_load': page_load_end}" class="navigation">
+    <div class="showPage" :class="{active: activeSlide == 1}" @click.stop.prevent="showSlide(1)">
+        <p>01</p>
+        <div class="line"></div>
+    </div>
+    <div class="showPage" :class="{active: activeSlide == 2}" @click.stop.prevent="showSlide(2)">
+        <p>02</p>
+        <div class="line"></div>
+    </div>
+    <div class="showPage" :class="{active: activeSlide == 3}" @click.stop.prevent="showSlide(3)">
+        <p>03</p>
+        <div class="line"></div>
+    </div>
+    <div class="showPage" :class="{active: activeSlide == 4}" @click.stop.prevent="showSlide(4)">
+        <p>04</p>
+        <div class="line"></div>
+    </div>
+</div>
+    </div>
+    <footer class="footer-mobile">
+    <p class="footer-mobile-email">colonel</p>
+    <div class="footer-mobile-credits">
+        <p class="footer-mobile-copyright">Raphael © 2018</p>
+        <a href="http://tdsgn.ru/" target="_blank" class="footer-mobile-t">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.585938 0.58572C0 1.17166 0 2.11437 0 4V12C0 13.8856 0 14.8283 0.585938 15.4143C1.17144 16 2.11458 16 4 16H12C13.8854 16 14.8286 16 15.4141 15.4143C16 14.8283 16 13.8856 16 12V4C16 2.11437 16 1.17166 15.4141 0.58572C14.8286 0 13.8854 0 12 0H4C2.11458 0 1.17144 0 0.585938 0.58572ZM9.08898 5.05143H10.7457V6.8635H9.08898V9.82031L9.08941 9.83051C9.1072 10.6228 9.1237 11.3303 9.98872 11.3303H10.8411L10.8889 13.1424C10.8889 13.1424 10.2795 13.4444 9.38889 13.4444C7.18316 13.4444 6.38889 12.6693 6.38889 10.4243V6.8635H4.88889V5.05143H6.38889V2.66667H9.08898V5.05143Z" fill="white"/>
+            </svg>
+        </a>
+    </div>
+</footer>    <div class="fixBlock2"></div>
+</div>
+<script src="js/vue.min.js"></script>
+<script src="js/vendor.min.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/Hammer.js"></script>
+<script src="js/main.min.js"></script><script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function () {
+            try {
+                w.yaCounter49151863 = new Ya.Metrika2({
+                    id: 49151863,
+                    clickmap: true,
+                    trackLinks: true,
+                    accurateTrackBounce: true,
+                    webvisor: true
+                });
+            } catch (e) {
+            }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () {
+                n.parentNode.insertBefore(s, n);
+            };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "../mc.yandex.ru/metrika/tag.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else {
+            f();
+        }
+    })(document, window, "yandex_metrika_callbacks2");
+</script>
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/49151863" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript>
+<script type="text/javascript">
+    var _tmr = window._tmr || (window._tmr = []);
+    _tmr.push({id: "3036252", type: "pageView", start: (new Date()).getTime()});
+    (function (d, w, id) {
+        if (d.getElementById(id)) return;
+        var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+        ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+        var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+        if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+    })(document, window, "topmailru-code");
+</script>
+<noscript>
+    <div><img src="http://top-fwz1.mail.ru/counter?id=3036252;js=na" style="border:0;position:absolute;left:-9999px;" alt="" /></div>
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120892634-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-120892634-1');
+</script>
+<body style="width: 100%; height: 100%;">
+<DIV id="cover" style="position: absolute; width: 100%; height: 100%; zindex: 5000; top: 0px; left: 0px; cursor: pointer; background: transparent; display: none;">&nbsp;</div>
+
+<ul><li>One</li><li>Two</li><li>Three</li></ul>
+
+<script>
+   window.document.body.onmousedown = function ()
+   {
+      document.getElementById('cover').style.display = '';
+   };
+
+   window.document.body.onmouseup = function ()
+   {
+      document.getElementById('cover').style.display = 'none';
+   };
+</script>
+
+
+</body>
+
+</html>

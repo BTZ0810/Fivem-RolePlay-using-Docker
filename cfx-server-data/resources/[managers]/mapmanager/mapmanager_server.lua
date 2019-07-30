@@ -1,7 +1,25 @@
 -- loosely based on MTA's https://code.google.com/p/mtasa-resources/source/browse/trunk/%5Bmanagers%5D/mapmanager/mapmanager_main.lua
 
-local maps = {}
-local gametypes = {}
+maps = {}
+gametypes = {}
+
+AddEventHandler('getResourceInitFuncs', function(isPreParse, add)
+    add('resource_type', function(type)
+        return function(params)
+            local resourceName = GetInvokingResource()
+
+            if type == 'map' then
+                maps[resourceName] = params
+            elseif type == 'gametype' then
+                gametypes[resourceName] = params
+            end
+        end
+    end)
+
+    add('map', function(file)
+        AddAuxFile(file)
+    end)
+end)
 
 local function refreshResources()
     local numResources = GetNumResources()
@@ -29,16 +47,8 @@ end)
 refreshResources()
 
 AddEventHandler('onResourceStarting', function(resource)
-    local num = GetNumResourceMetadata(resource, 'map')
-
-    if num then
-        for i = 0, num-1 do
-            local file = GetResourceMetadata(resource, 'map', i)
-
-            if file then
-                addMap(file, resource)
-            end
-        end
+    if GetNumResourceMetadata(resource, 'map') then
+        -- todo: add file
     end
 
     if maps[resource] then
@@ -122,6 +132,7 @@ AddEventHandler('onResourceStart', function(resource)
                 SetGameType(gtName)
 
                 print('Started gametype ' .. gtName)
+                TriggerClientEvent('onClientGameTypeStart', -1, getCurrentGameType())
 
                 SetTimeout(50, function()
                     if not currentMap then
@@ -144,9 +155,6 @@ AddEventHandler('onResourceStart', function(resource)
             end
         end
     end
-
-    -- handle starting
-    loadMap(resource)
 end)
 
 local function handleRoundEnd()
@@ -156,20 +164,11 @@ local function handleRoundEnd()
 		if data.gameTypes[currentGameType] then
 			table.insert(possibleMaps, map)
 		end
-    end
+	end
 
-    if #possibleMaps > 1 then
-        local mapname = currentMap
-
-        while mapname == currentMap do
-            local rnd = math.random(#possibleMaps)
-            mapname = possibleMaps[rnd]
-        end
-
-        changeMap(mapname)
-    elseif #possibleMaps > 0 then
-        local rnd = math.random(#possibleMaps)
-        changeMap(possibleMaps[rnd])
+	if #possibleMaps > 0 then
+		local rnd = math.random(#possibleMaps)
+		changeMap(possibleMaps[rnd])
 	end
 end
 
@@ -177,10 +176,6 @@ AddEventHandler('mapmanager:roundEnded', function()
     -- set a timeout as we don't want to return to a dead environment
     SetTimeout(50, handleRoundEnd) -- not a closure as to work around some issue in neolua?
 end)
-
-function roundEnded()
-    SetTimeout(50, handleRoundEnd)
-end
 
 AddEventHandler('onResourceStop', function(resource)
     if resource == currentGameType then
@@ -196,9 +191,6 @@ AddEventHandler('onResourceStop', function(resource)
 
         currentMap = nil
     end
-
-    -- unload the map
-    unloadMap(resource)
 end)
 
 AddEventHandler('rconCommand', function(commandName, args)

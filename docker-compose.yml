@@ -1,17 +1,36 @@
-fivem:
-  image: fivem-server
+version: '3'
 
-  stdin_open: true
-  tty: true
+services:
+  fivem:
+    image: fivem-server
 
-  volumes:
-    # You must provide a server config file
-    - ./server.cfg:/srv/server.cfg
+    stdin_open: true
+    tty: true
 
-    # You must clone from https://github.com/citizenfx/cfx-server-data
-    - ./cfx-server-data/resources:/srv/resources
-    - ./cfx-server-data/cache:/srv/cache
+    volumes:
+      # You must provide a server config file
+      - ./server.cfg:/srv/server.cfg
 
-  ports:
-    - "30120:30120/tcp"
-    - "30120:30120/udp"
+      # You must clone from https://github.com/citizenfx/cfx-server-data
+      - ./cfx-server-data/resources:/srv/resources
+      - ./cfx-server-data/cache:/srv/cache
+    depends_on:
+      - "db"
+    ports:
+      - "30120:30120/tcp"
+      - "30120:30120/udp"
+
+
+  db:
+    container_name: db
+    image: mariadb
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: salvas
+      MYSQL_DATABASE: vrp
+      MYSQL_USER: fivemrp
+      MYSQL_PASSWORD: salvas
+    volumes:
+      - /opt/db-data:/var/lib/mysql 
+    ports:
+      - "3306:3306"
