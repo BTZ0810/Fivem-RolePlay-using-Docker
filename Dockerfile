@@ -10,5 +10,7 @@ WORKDIR /srv
 
 EXPOSE 30120/tcp 30120/udp
 
+COPY logo.png /srv/
+
 ENTRYPOINT ["sh", "/srv/run.sh"]
 CMD ["+exec", "/srv/server.cfg"]

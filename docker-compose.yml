@@ -13,6 +13,7 @@ services:
 
       # You must clone from https://github.com/citizenfx/cfx-server-data
       - ./cfx-server-data/resources:/srv/resources
+        #- ./cfx-server-data:/srv
       - ./cfx-server-data/cache:/srv/cache
     depends_on:
       - "db"
